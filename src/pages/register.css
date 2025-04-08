@@ -28,5 +28,20 @@
       transform: translateX(-100%);
     }
   }
+  @media screen and (max-width: 768px) {
+    .form-container {
+      padding: 10px;
+      margin: 0;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    .scroll-text {
+      font-size: 14px;
+    }
+  }
+  
   
   
