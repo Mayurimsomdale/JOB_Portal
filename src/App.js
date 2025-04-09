@@ -17,6 +17,8 @@ function App() {
       <Route path="/jobs" element={<Jobs />} />
       <Route path="/applicants" element={<Applicants />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      
+    
       <Route path="*" element={<NotFound />} /> 
     </Routes>
   );
