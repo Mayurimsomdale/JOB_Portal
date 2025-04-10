@@ -97,7 +97,7 @@ const Register = () => {
   };
 
   return (
-    <div className='form-container' style={{
+    <div div className='form-container' style={{
       backgroundImage: `url(${bgImage})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -110,13 +110,15 @@ const Register = () => {
     }}
    >
       <div className="navbar-custom">
-        <div className="scroll-text">
+        <div className="scroll-text" style={{ textAlign: 'center', fontSize: '1rem', width: '100%' }}>
           Welcome to the Job Portal Application - Register Now!
         
         </div> 
       </div>
       
+      
       <form className='card p-3' onSubmit={handleSubmit} style={{ backgroundColor: 'white', borderRadius: '10px' }}>
+        <div style={{ width: '100%', maxWidth: '420px' }}>
         <h3 className='text-center mb-3'>Register</h3>
         
         {error && <div className="alert alert-danger">{error}</div>}
@@ -221,7 +223,9 @@ const Register = () => {
             {loading ? 'Registering...' : 'Register'}
           </button>
         </div>
+        </div>
       </form>
+     
      {/* Login button outside the form, right side below navbar */}
      <div style={{ position: 'absolute', top: '90px', right: '20px' }}>
   <Link 
@@ -233,6 +237,7 @@ const Register = () => {
       fontSize: '1.2rem',
       padding: '10px 24px',
       border: 'none'
+      
     }}
   >
     Login
