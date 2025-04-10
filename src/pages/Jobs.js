@@ -538,7 +538,7 @@ const Jobs = () => {
   };
 
   return (
-    <div className="jobs-container">
+    <div className="jobs-container"  >
       <h1 className="main-heading">Best<span>Jobs</span>Online</h1>
       
       <div className="search-bar">
@@ -627,6 +627,7 @@ const Jobs = () => {
       
       {showJobDetails && <JobDetailsModal job={selectedJob} />}
     </div>
+    
   );
 };
 

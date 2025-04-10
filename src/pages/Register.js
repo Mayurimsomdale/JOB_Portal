@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './register.css'; // if you want to keep styles separate
-
+import bgImage from '../images/job.jpg';
 const Register = () => {
   // Common country codes with flags
   const countryCodes = [
@@ -97,14 +97,26 @@ const Register = () => {
   };
 
   return (
-    <div className='form-container'>
+    <div className='form-container' style={{
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '2rem',
+    }}
+   >
       <div className="navbar-custom">
         <div className="scroll-text">
           Welcome to the Job Portal Application - Register Now!
-        </div>
+        
+        </div> 
       </div>
       
-      <form className='card p-3' onSubmit={handleSubmit}>
+      <form className='card p-3' onSubmit={handleSubmit} style={{ backgroundColor: 'white', borderRadius: '10px' }}>
         <h3 className='text-center mb-3'>Register</h3>
         
         {error && <div className="alert alert-danger">{error}</div>}
@@ -210,6 +222,25 @@ const Register = () => {
           </button>
         </div>
       </form>
+     {/* Login button outside the form, right side below navbar */}
+     <div style={{ position: 'absolute', top: '90px', right: '20px' }}>
+  <Link 
+    to="/login" 
+    className="btn" 
+    style={{
+      backgroundColor: '#006400',  // Dark green
+      color: 'white',
+      fontSize: '1.2rem',
+      padding: '10px 24px',
+      border: 'none'
+    }}
+  >
+    Login
+  </Link>
+</div>
+
+
+
     </div>
   );
 };

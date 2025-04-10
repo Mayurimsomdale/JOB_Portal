@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
-
+import bgImage from '../images/job.jpg';
 const EmailForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
@@ -106,12 +106,14 @@ const EmailForgotPassword = () => {
   };
 
   const renderForm = () => {
+    
     switch (step) {
       case 1:
-        return (
-          <form className="card p-4 shadow" onSubmit={handleSendEmailCode}>
+        return ( 
+          
+          <form className="card p-4 shadow" onSubmit={handleSendEmailCode}  >
             <h4 className="text-center mb-3">Forgot Password</h4>
-            <div className="mb-3">
+            <div className="mb-3" >
               <label htmlFor="email" className="form-label">Email Address</label>
               <input
                 type="email"
@@ -190,7 +192,7 @@ const EmailForgotPassword = () => {
         );
       case 3:
         return (
-          <form className="card p-4 shadow" onSubmit={handleResetPassword}>
+          <form className="card p-4 shadow" onSubmit={handleResetPassword} >
             <h4 className="text-center mb-3">Reset Password</h4>
             <div className="mb-3">
               <label htmlFor="newPassword" className="form-label">New Password</label>
@@ -238,7 +240,17 @@ const EmailForgotPassword = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="login-page" style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '2rem',
+        }}>
       <div className="login-container">{renderForm()}</div>
     </div>
   );

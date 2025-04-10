@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './login.css'; // Make sure to create this file
-
+import bgImage from '../images/job.jpg'; 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,11 +30,22 @@ const Login = () => {
   };
 
   return (
-    <div className='login-page'>
+    <div className='login-page'style={{
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '2rem',
+    }}>
       <div className="navbar-custom">
         <div className="scroll-text">
           Welcome to the Job Portal Application – Please Login!
         </div>
+        
       </div>
 
       <div className='login-container'>

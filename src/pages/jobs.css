@@ -1,9 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #dddef4;/* Optional: match body color with your container */
+}
+
 .jobs-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bae7ff;
 }
+
 
 .main-heading {
   text-align: center;
@@ -341,6 +350,9 @@
   background-color: #bae7ff;
 }
 
+
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .search-bar {
@@ -397,3 +409,4 @@
   top: 0;
   z-index: 1000;
 }
+

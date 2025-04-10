@@ -3,6 +3,10 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    
+     
+      
+    
   }
   
   .navbar-custom {
@@ -21,6 +25,7 @@
     animation: scroll-left 15s linear infinite;
   }
   
+ 
   /* Marquee-like animation */
   @keyframes scroll-left {
     0% {
