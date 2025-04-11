@@ -1,5 +1,8 @@
+/* Base styles */
 .App {
   text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -7,6 +10,7 @@
   pointer-events: none;
 }
 
+/* Animation only if user hasn't asked for reduced motion */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -20,14 +24,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 1.5vmin);
   color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* Link color */
 .App-link {
   color: #61dafb;
 }
 
+/* Logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,13 +46,21 @@
   }
 }
 
+/* Card styling: Responsive */
 .card {
   width: 100%;
+  max-width: 600px;
   padding: 20px;
+  margin: 10px auto;
+  background-color: #ffffff10; /* semi-transparent card look */
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
-@media (min-width: 600px) {
-  .card {
-    width: 50%;
+/* Optional: Make text scale better on mobile */
+@media (max-width: 400px) {
+  .App-header {
+    font-size: 16px;
   }
 }
