@@ -1,4 +1,4 @@
-const BASE_URL = "https://job-portal-4-xwnr.onrender.com"
+const BASE_URL = "https://jobportal-backend-3jgb.onrender.com"
 
 
 export async function getData() {
