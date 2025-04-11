@@ -3,7 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+    max-width:100%;
      
       
     
@@ -113,4 +113,14 @@
   
   .text-danger {
     color: #dc3545;
+  }
+  @media (max-width: 600) {
+    .login-container {
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    .card {
+      padding: 1rem !important;
+    }
   }

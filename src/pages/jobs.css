@@ -354,7 +354,7 @@ body {
 
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .search-bar {
     flex-direction: column;
   }

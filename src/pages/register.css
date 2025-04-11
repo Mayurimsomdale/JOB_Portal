@@ -54,7 +54,7 @@
       transform: translateX(-100%);
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 600px) {
     .form-container {
       padding: 10px;
       margin: 0;

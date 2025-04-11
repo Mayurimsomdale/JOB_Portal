@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './register.css';
 import bgImage from '../images/job.jpg';
+// Example from your EmailForgotPassword.js
 
 const Register = () => {
   const countryCodes = [ /* ... your country codes here ... */ ];

@@ -46,3 +46,9 @@
     background-color:white ;
     color: black;
 }
+@media (max-width: 600px) {
+    .container {
+      padding: 5px;
+    }
+  }
+  
