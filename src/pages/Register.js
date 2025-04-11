@@ -4,7 +4,7 @@ import axios from 'axios';
 import './register.css';
 import bgImage from '../images/job.jpg';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const Register = () => {
   const countryCodes = [
@@ -89,7 +89,7 @@ const Register = () => {
       padding: '2rem',
     }}>
       <div className="navbar-custom">
-        <div className="scroll-text" style={{ textAlign: 'center', fontSize: '1rem', width: '100%' }}>
+        <div className="scroll-text" >
           Welcome to the Job Portal Application - Register Now!
         </div>
       </div>

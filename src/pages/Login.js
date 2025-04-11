@@ -6,7 +6,7 @@ import './login.css';
 import bgImage from '../images/job.jpg';
 
 // Base URL for API calls
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const Login = () => {
   const [email, setEmail] = useState('');

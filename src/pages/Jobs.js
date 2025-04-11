@@ -3,6 +3,7 @@ import './jobs.css';
 import { Link } from 'react-router-dom';
 
 const Jobs = () => {
+  const API_BASE_URL = process.env.REACT_APP_API_URL;
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [search, setSearch] = useState('Software Engineer');
   const [location, setLocation] = useState('India');
@@ -61,6 +62,12 @@ const Jobs = () => {
               'Authorization': `Bearer ${process.env.REACT_APP_NAUKRI_API_KEY || ''}`,
             },
             transform: (data) => data.jobPostings || []
+          },
+          // Add your own API endpoint using the environment variable
+          {
+            url: `${API_BASE_URL}/api/jobs`,
+            params: `search=${query}&location=${locationQuery}&page=${page}`,
+            transform: (data) => data.jobs || []
           }
         ];
         
@@ -143,7 +150,7 @@ const Jobs = () => {
     };
     
     fetchJobs();
-  }, [search, location, page]);
+  }, [search, location, page, API_BASE_URL]);
 
   // Enhanced function to generate diverse fallback jobs when API fails
   const generateExpandedFallbackJobs = (searchTerm, locationTerm, currentPage) => {
@@ -631,4 +638,4 @@ const Jobs = () => {
   );
 };
 
-export default Jobs; 
+export default Jobs;
