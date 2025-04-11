@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './register.css';
 import bgImage from '../images/job.jpg';
-// Example from your EmailForgotPassword.js
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
 
 const Register = () => {
-  const countryCodes = [ /* ... your country codes here ... */ ];
+  const countryCodes = [
+    { country: 'India', code: '+91' },
+    { country: 'USA', code: '+1' },
+    { country: 'UK', code: '+44' },
+    { country: 'Canada', code: '+1' },
+    { country: 'Australia', code: '+61' },
+  ];
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    countryCode: '+1',
+    countryCode: '+91',
     mobileNumber: '',
     password: '',
     confirmPassword: '',
@@ -41,23 +48,22 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/register`,
+        `${API_BASE_URL}/api/register`,
         {
           name,
           email,
           mobileNumber: fullMobileNumber,
-          password
+          password,
         }
       );
-      
+
       console.log("Registration success:", response.data);
-      
 
       alert("User registered successfully!");
       setFormData({
         name: '',
         email: '',
-        countryCode: '+1',
+        countryCode: '+91',
         mobileNumber: '',
         password: '',
         confirmPassword: '',

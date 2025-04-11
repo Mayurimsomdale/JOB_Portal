@@ -2,8 +2,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './login.css'; // Make sure to create this file
-import bgImage from '../images/job.jpg'; 
+import './login.css';
+import bgImage from '../images/job.jpg';
+
+// Base URL for API calls
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +19,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:8081/api/login', { email, password });
+      const res = await axios.post(`${API_BASE_URL}/api/login`, { email, password });
 
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
@@ -30,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <div className='login-page'style={{
+    <div className='login-page' style={{
       backgroundImage: `url(${bgImage})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -45,7 +49,6 @@ const Login = () => {
         <div className="scroll-text">
           Welcome to the Job Portal Application – Please Login!
         </div>
-        
       </div>
 
       <div className='login-container'>
@@ -71,7 +74,7 @@ const Login = () => {
               required
             />
             <div className="text-end">
-                <Link to="/forgot-password" className="small text-primary">Forgot Password?</Link>
+              <Link to="/forgot-password" className="small text-primary">Forgot Password?</Link>
             </div>
           </div>
           {error && <p className='text-danger'>{error}</p>}
